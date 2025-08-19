@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  }
+  
+  .risk-critical {
+    background: linear-gradient(135deg, #ef4444 0%, #3b82f6 100%);
+  }
+  
+  .risk-high {
+    background: linear-gradient(135deg, #f97316 0%, #3b82f6 100%);
+  }
+  
+  .risk-medium {
+    background: linear-gradient(135deg, #eab308 0%, #3b82f6 100%);
+  }
+  
+  .risk-low {
+    background: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
+  }
+}
