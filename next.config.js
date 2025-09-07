@@ -1,8 +1,23 @@
+// next.config.js (CommonJS, como lo tenés)
+const { withSentryConfig } = require("@sentry/nextjs");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-}
+  productionBrowserSourceMaps: true, // útil para mejores stacktraces
+};
 
-module.exports = nextConfig
+module.exports = withSentryConfig(
+  nextConfig,
+  {
+    org: "your-org-name",
+    project: "cybersecurity-risk-dashboard",
+    silent: true,
+  },
+  {
+    widenClientFileUpload: true,
+    transpileClientSDK: true,
+    tunnelRoute: "/monitoring",
+    hideSourceMaps: true,
+    disableLogger: true,
+  }
+);

@@ -6,9 +6,11 @@ import { RiskForm } from '@/components/risk-form'
 import { RiskAnalysis } from '@/components/risk-analysis'
 import { RiskMatrix } from '@/components/risk-matrix'
 import { RiskSummary } from '@/components/risk-summary'
+import TestError from './TestError'
 import { Risk, RiskFormData } from '@/types/risk'
 import { getRiskLevelById, calculateRiskScore, classifyRiskLevel } from '@/lib/utils'
 import { RISK_LEVELS } from '@/lib/constants'
+import TestSentry from './TestSentry'
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState('summary')
@@ -158,6 +160,10 @@ export default function HomePage() {
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {renderActiveTab()}
+        
+        <div className="mt-8 flex justify-center">
+          <TestSentry/>
+        </div>
       </main>
     </div>
   )
